@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CursoSabado.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,27 @@ namespace CursoSabado.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private List<PessoaModel> ObterPessoas() 
+        {
+            List<PessoaModel> listaDePessoas = new List<PessoaModel>();
+
+            for (int i = 0; i <= 10; i++)
+            {
+                listaDePessoas.Add(new PessoaModel()
+                {
+                    Id = i,
+                    Nome = " Pessoa " + i
+                });
+            }
+
+            return listaDePessoas;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var pessoasQueVaoParaTela = ObterPessoas();
+
+            return View(pessoasQueVaoParaTela);
         }
 
         public ActionResult About()
