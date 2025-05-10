@@ -1,0 +1,16 @@
+﻿@model CursoSabado.Web.Models.InformacaoModel
+
+<main aria-labelledby="title">
+    <h2 id="title">Curso do Sábado</h2>
+
+    @if (Model != null)
+    {
+        <p>@Model.CodigoCurso</p>
+        <p>@Model.Nome</p>
+        <p>@Model.Observacoes</p>
+    }
+    else 
+    {
+        <div>Sem informações para o momento!</div>
+    }
+</main>
