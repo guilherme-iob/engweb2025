@@ -25,8 +25,6 @@ internal class Program
         foreach (var p in pessoas)
         {
             Console.WriteLine(p.Id + " - " + p.NomeCompleto);
-        }
-
-        
+        }        
     }
 }
