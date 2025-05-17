@@ -3,6 +3,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+//Conseguirmos refletir as atualizações das views em debug
+builder.Services
+    .AddRazorPages()
+    .AddRazorRuntimeCompilation();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
