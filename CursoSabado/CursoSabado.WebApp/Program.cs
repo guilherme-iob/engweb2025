@@ -1,4 +1,4 @@
-using CursoSabado.WebApp.Models;
+using CursoSabado.Repositorios.EF;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

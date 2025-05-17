@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CursoSabado.Dominio.Pessoas;
+using Microsoft.EntityFrameworkCore;
 
-namespace CursoSabado.WebApp.Models
+namespace CursoSabado.Repositorios.EF
 {
     public class CursoSabadoContexto : DbContext
     {

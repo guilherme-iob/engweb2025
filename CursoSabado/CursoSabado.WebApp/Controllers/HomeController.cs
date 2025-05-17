@@ -1,6 +1,8 @@
 using CursoSabado.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using CursoSabado.Dominio.Pessoas;
+using CursoSabado.Repositorios.EF;
 
 namespace CursoSabado.WebApp.Controllers
 {
@@ -18,9 +20,7 @@ namespace CursoSabado.WebApp.Controllers
         public IActionResult Index()
         {
             IList<Pessoa> pessoas;
-
             pessoas = _contexto.Pessoas.ToList();
-
 
             return View(pessoas);
         }
