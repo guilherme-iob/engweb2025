@@ -8,3 +8,10 @@
 * https://www.conventionalcommits.org/en/v1.0.0/
 * https://dotnet.microsoft.com/pt-br/download/dotnet-framework [SDKs dos Frameworks Antigos]
 * https://dotnet.microsoft.com/en-us/download [ SDKs do frameworks novo (dotnetcore)]
+
+# Migração Framework
+* https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-install
+* https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.upgradeassistant
+* dotnet tool install -g upgrade-assistant [Comando para instalar a ferramenta de migração]
+* upgrade-assistant upgrade --targetFramework net8.0 [Comando para migrar os projetos em C#. Necessita instalar o upgrade-assistant pelo comando dotnet tool install]
+* https://learn.microsoft.com/pt-br/azure/azure-sql/database/connect-query-dotnet-core?view=azuresql
