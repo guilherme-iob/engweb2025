@@ -15,3 +15,8 @@
 * dotnet tool install -g upgrade-assistant [Comando para instalar a ferramenta de migração]
 * upgrade-assistant upgrade --targetFramework net8.0 [Comando para migrar os projetos em C#. Necessita instalar o upgrade-assistant pelo comando dotnet tool install]
 * https://learn.microsoft.com/pt-br/azure/azure-sql/database/connect-query-dotnet-core?view=azuresql
+
+# Pacotes utilizados
+* Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilatio [web]
+* Microsoft.Extensions.Configuration [web ]
+* Microsoft.Extensions.Configuration.Json  [web ]
