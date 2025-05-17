@@ -20,3 +20,7 @@
 * Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation [web]
 * Microsoft.Extensions.Configuration [web ]
 * Microsoft.Extensions.Configuration.Json  [web ]
+* Microsoft.EntityFrameworkCore.SqlServer [Etity Framework - Acesso aos dados]
+  * Microsoft.EntityFrameworkCore
+  * Microsoft.EntityFrameworkCore.Proxies
+  * Microsoft.EntityFrameworkCore.Relational
