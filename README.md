@@ -17,6 +17,6 @@
 * https://learn.microsoft.com/pt-br/azure/azure-sql/database/connect-query-dotnet-core?view=azuresql
 
 # Pacotes utilizados
-* Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilatio [web]
+* Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation [web]
 * Microsoft.Extensions.Configuration [web ]
 * Microsoft.Extensions.Configuration.Json  [web ]
