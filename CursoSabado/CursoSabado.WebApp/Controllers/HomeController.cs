@@ -7,15 +7,22 @@ namespace CursoSabado.WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly CursoSabadoContexto _contexto;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, CursoSabadoContexto contexto)
         {
             _logger = logger;
+            _contexto = contexto;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IList<Pessoa> pessoas;
+
+            pessoas = _contexto.Pessoas.ToList();
+
+
+            return View(pessoas);
         }
 
         public IActionResult Privacy()

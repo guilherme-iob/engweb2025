@@ -1,3 +1,6 @@
+using CursoSabado.WebApp.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +12,13 @@ builder.Services
     .AddRazorPages()
     .AddRazorRuntimeCompilation();
 
+//Vinculando o Contexto do EF no DbContexto do core para usar como DI
+builder.Services
+    .AddDbContext<CursoSabadoContexto>(options =>
+        options.UseSqlServer(
+            builder.Configuration.GetConnectionString("DefaultConnection")
+        )
+    );
 
 var app = builder.Build();
 
