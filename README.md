@@ -9,6 +9,9 @@
 * https://dotnet.microsoft.com/pt-br/download/dotnet-framework [SDKs dos Frameworks Antigos]
 * https://dotnet.microsoft.com/en-us/download [ SDKs do frameworks novo (dotnetcore)]
 
+# Docs
+* https://martinfowler.com/bliki/DesignStaminaHypothesis.html
+
 # Migração Framework
 * https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-install
 * https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.upgradeassistant
