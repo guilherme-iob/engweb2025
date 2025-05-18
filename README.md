@@ -11,6 +11,8 @@
 
 # Docs
 * https://martinfowler.com/bliki/DesignStaminaHypothesis.html
+* https://itnext.io/the-list-of-architectural-metapatterns-ed64d8ba125d
+* https://itnext.io/deconstructing-patterns-a605967e2da6
 
 # Migração Framework
 * https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-install
