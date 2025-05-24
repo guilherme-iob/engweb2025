@@ -1,32 +1,27 @@
-﻿using CursoSabado.Repositorios.EF;
-using CursoSabado.Repositorios.EF.Pessoas;
-using Microsoft.EntityFrameworkCore;
+﻿using CursoSabado.Infra.IOC;
+using CursoSabado.Repositorios.Pessoas;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World - Sistema versão Console");
+        Console.WriteLine("Sistema - Versão Console");
 
         var configuration = new ConfigurationBuilder() 
             .SetBasePath(Directory.GetCurrentDirectory()) 
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .Build();
 
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
+        var services = new ServiceCollection();
+        services.Registrar(configuration);
 
-        var optionsBuilder = new DbContextOptionsBuilder<CursoSabadoContexto>();
-        optionsBuilder.UseSqlServer(connectionString);
+        var provider = services.BuildServiceProvider();
 
-        var contexto = new CursoSabadoContexto(optionsBuilder.Options);
+        IRepositorioDePessoa repositorioDePessoa = provider.GetRequiredService<IRepositorioDePessoa>();
 
-
-        //Formato errado
-        //var pessoas = contexto.Pessoas.Where(pessoa => pessoa.NomeCompleto.StartsWith("F")).ToList();
-
-        RepositorioDePessoa repositorioDePessoa = new RepositorioDePessoa(contexto);
-        var pessoas = repositorioDePessoa.ObterPorInicioDeNome("F");
+        var pessoas = repositorioDePessoa.OterTodos();
 
         foreach (var p in pessoas)
         {
