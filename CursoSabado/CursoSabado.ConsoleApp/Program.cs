@@ -1,4 +1,5 @@
 ﻿using CursoSabado.Repositorios.EF;
+using CursoSabado.Repositorios.EF.Pessoas;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -20,7 +21,12 @@ internal class Program
 
         var contexto = new CursoSabadoContexto(optionsBuilder.Options);
 
-        var pessoas = contexto.Pessoas.ToList();
+
+        //Formato errado
+        //var pessoas = contexto.Pessoas.Where(pessoa => pessoa.NomeCompleto.StartsWith("F")).ToList();
+
+        RepositorioDePessoa repositorioDePessoa = new RepositorioDePessoa(contexto);
+        var pessoas = repositorioDePessoa.ObterPorInicioDeNome("F");
 
         foreach (var p in pessoas)
         {

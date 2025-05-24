@@ -12,7 +12,7 @@ builder.Services
     .AddRazorPages()
     .AddRazorRuntimeCompilation();
 
-//Vinculando o Contexto do EF no DbContexto do core para usar como DI
+//Vinculando o Contexto do EF no DbContexto do core para usar como DI/IOC
 builder.Services
     .AddDbContext<CursoSabadoContexto>(options =>
         options.UseSqlServer(

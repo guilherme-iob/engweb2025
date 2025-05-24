@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using CursoSabado.Dominio.Pessoas;
 using CursoSabado.Repositorios.EF;
+using CursoSabado.Repositorios.EF.Pessoas;
 
 namespace CursoSabado.WebApp.Controllers
 {
@@ -19,10 +20,11 @@ namespace CursoSabado.WebApp.Controllers
 
         public IActionResult Index()
         {
-            IList<Pessoa> pessoas;
-            pessoas = _contexto.Pessoas.ToList();
+            var repositorioDePessoa = new RepositorioDePessoa(_contexto);
 
-            return View(pessoas);
+            var retorno = repositorioDePessoa.ObterPorInicioDeNome("F");            
+            
+            return View(retorno);
         }
 
         public IActionResult Privacy()
