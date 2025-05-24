@@ -13,6 +13,7 @@
 * https://martinfowler.com/bliki/DesignStaminaHypothesis.html
 * https://itnext.io/the-list-of-architectural-metapatterns-ed64d8ba125d
 * https://itnext.io/deconstructing-patterns-a605967e2da6
+* https://learn.microsoft.com/pt-br/dotnet/standard/linq
 
 # Migração Framework
 * https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-install
