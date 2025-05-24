@@ -31,3 +31,4 @@
   * Microsoft.EntityFrameworkCore.Proxies
   * Microsoft.EntityFrameworkCore.Relational
 * Microsoft.Extensions.DependencyInjection
+* Microsoft.Data.SqlClient [ADO.NET]
