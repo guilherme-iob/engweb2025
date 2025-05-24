@@ -20,7 +20,9 @@ builder.Services
         )
     );
 
-builder.Services.AddScoped<CursoSabado.Repositorios.Pessoas.IRepositorioDePessoa, CursoSabado.Repositorios.EF.Pessoas.RepositorioDePessoa>();
+//VINCULOS ENTRE INTERFACES E CLASSES
+//builder.Services.AddScoped<CursoSabado.Repositorios.Pessoas.IRepositorioDePessoa, CursoSabado.Repositorios.EF.Pessoas.RepositorioDePessoa>();
+builder.Services.AddScoped<CursoSabado.Repositorios.Pessoas.IRepositorioDePessoa, CursoSabado.Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
 
 var app = builder.Build();
 
