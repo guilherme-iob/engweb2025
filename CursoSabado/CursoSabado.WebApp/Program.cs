@@ -1,3 +1,4 @@
+using CursoSabado.Infra.IOC;
 using CursoSabado.Repositorios.EF;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,17 +13,24 @@ builder.Services
     .AddRazorPages()
     .AddRazorRuntimeCompilation();
 
+#region Formato antigo e inicial de fazer o di/ioc das interfaces e classes
+
 //Vinculando o Contexto do EF no DbContexto do core para usar como DI/IOC
-builder.Services
-    .AddDbContext<CursoSabadoContexto>(options =>
-        options.UseSqlServer(
-            builder.Configuration.GetConnectionString("DefaultConnection")
-        )
-    );
+//builder.Services
+//    .AddDbContext<CursoSabadoContexto>(options =>
+//        options.UseSqlServer(
+//            builder.Configuration.GetConnectionString("DefaultConnection")
+//        )
+//    );
 
 //VINCULOS ENTRE INTERFACES E CLASSES
 //builder.Services.AddScoped<CursoSabado.Repositorios.Pessoas.IRepositorioDePessoa, CursoSabado.Repositorios.EF.Pessoas.RepositorioDePessoa>();
-builder.Services.AddScoped<CursoSabado.Repositorios.Pessoas.IRepositorioDePessoa, CursoSabado.Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
+//builder.Services.AddScoped<CursoSabado.Repositorios.Pessoas.IRepositorioDePessoa, CursoSabado.Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
+
+#endregion
+
+//Vinculos de interfaces e classes do projeto de infra-ioc
+builder.Services.Registrar(builder.Configuration);
 
 var app = builder.Build();
 

@@ -24,7 +24,7 @@ namespace CursoSabado.WebApp.Controllers
 
         public IActionResult Index()
         {
-            var retorno = _repositorio.ObterPorInicioDeNome("N");
+            var retorno = _repositorio.OterTodos();
 
             return View(retorno);
         }

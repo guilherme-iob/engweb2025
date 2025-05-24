@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CursoSabado.Dominio\CursoSabado.Dominio.csproj" />
+    <ProjectReference Include="..\CursoSabado.Infra.IOC\CursoSabado.Infra.IOC.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.EF\CursoSabado.Repositorios.EF.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.FakeNews\CursoSabado.Repositorios.FakeNews.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios\CursoSabado.Repositorios.csproj" />
