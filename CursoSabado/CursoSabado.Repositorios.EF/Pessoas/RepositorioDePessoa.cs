@@ -1,4 +1,5 @@
 ﻿using CursoSabado.Dominio.Pessoas;
+using CursoSabado.Repositorios.Pessoas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CursoSabado.Repositorios.EF.Pessoas
 {
-    public class RepositorioDePessoa
+    public class RepositorioDePessoa : IRepositorioDePessoa
     {
         private readonly CursoSabadoContexto _contexto;
 

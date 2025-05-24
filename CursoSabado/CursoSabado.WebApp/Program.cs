@@ -20,6 +20,8 @@ builder.Services
         )
     );
 
+builder.Services.AddScoped<CursoSabado.Repositorios.Pessoas.IRepositorioDePessoa, CursoSabado.Repositorios.EF.Pessoas.RepositorioDePessoa>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

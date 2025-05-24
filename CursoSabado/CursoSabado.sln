@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.WebApp", "CursoSabado.WebApp\CursoSabado.WebApp.csproj", "{79D4D403-5296-40F4-AF32-97F68655F2E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoSabado.WebApp", "CursoSabado.WebApp\CursoSabado.WebApp.csproj", "{79D4D403-5296-40F4-AF32-97F68655F2E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentacao", "Apresentacao", "{69041A30-518B-46BC-ABC5-2BE84FF493BA}"
 EndProject
@@ -11,11 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{46B7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Camada de Dados", "Camada de Dados", "{78EB3F5E-24A7-4961-9C7E-9026E6FCACDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.Dominio", "CursoSabado.Dominio\CursoSabado.Dominio.csproj", "{70A653F2-91C2-472D-8B96-1D8A5C39F3A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoSabado.Dominio", "CursoSabado.Dominio\CursoSabado.Dominio.csproj", "{70A653F2-91C2-472D-8B96-1D8A5C39F3A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.Repositorios.EF", "CursoSabado.Repositorios.EF\CursoSabado.Repositorios.EF.csproj", "{814153B5-EDDC-42DB-9551-A84D8F4E35F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoSabado.Repositorios.EF", "CursoSabado.Repositorios.EF\CursoSabado.Repositorios.EF.csproj", "{814153B5-EDDC-42DB-9551-A84D8F4E35F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.ConsoleApp", "CursoSabado.ConsoleApp\CursoSabado.ConsoleApp.csproj", "{3E66E17A-9D1A-4763-9E56-6B6C3F498521}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoSabado.ConsoleApp", "CursoSabado.ConsoleApp\CursoSabado.ConsoleApp.csproj", "{3E66E17A-9D1A-4763-9E56-6B6C3F498521}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.Repositorios", "CursoSabado.Repositorios\CursoSabado.Repositorios.csproj", "{5780212F-EEA8-4003-A7BE-3D2AFCCAF229}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3E66E17A-9D1A-4763-9E56-6B6C3F498521}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E66E17A-9D1A-4763-9E56-6B6C3F498521}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E66E17A-9D1A-4763-9E56-6B6C3F498521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5780212F-EEA8-4003-A7BE-3D2AFCCAF229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5780212F-EEA8-4003-A7BE-3D2AFCCAF229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5780212F-EEA8-4003-A7BE-3D2AFCCAF229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5780212F-EEA8-4003-A7BE-3D2AFCCAF229}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{70A653F2-91C2-472D-8B96-1D8A5C39F3A0} = {46B79DDF-1216-483C-AFB7-F2167239C1E0}
 		{814153B5-EDDC-42DB-9551-A84D8F4E35F8} = {78EB3F5E-24A7-4961-9C7E-9026E6FCACDD}
 		{3E66E17A-9D1A-4763-9E56-6B6C3F498521} = {69041A30-518B-46BC-ABC5-2BE84FF493BA}
+		{5780212F-EEA8-4003-A7BE-3D2AFCCAF229} = {78EB3F5E-24A7-4961-9C7E-9026E6FCACDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB7B9661-0A6B-4BB6-91F0-686E7866793E}

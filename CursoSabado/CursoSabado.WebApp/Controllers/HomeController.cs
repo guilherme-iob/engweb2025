@@ -4,26 +4,28 @@ using System.Diagnostics;
 using CursoSabado.Dominio.Pessoas;
 using CursoSabado.Repositorios.EF;
 using CursoSabado.Repositorios.EF.Pessoas;
+using CursoSabado.Repositorios.Pessoas;
 
 namespace CursoSabado.WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly CursoSabadoContexto _contexto;
+        //private readonly CursoSabadoContexto _contexto;
+        private readonly IRepositorioDePessoa _repositorio;
 
-        public HomeController(ILogger<HomeController> logger, CursoSabadoContexto contexto)
+        public HomeController(
+            //CursoSabadoContexto contexto //Usando anteriormente quando não havia o padrao de repositorio implementado. Evitar
+            IRepositorioDePessoa repositorioPessoa
+            )
         {
-            _logger = logger;
-            _contexto = contexto;
+            //_contexto = contexto;
+            _repositorio = repositorioPessoa;
         }
 
         public IActionResult Index()
         {
-            var repositorioDePessoa = new RepositorioDePessoa(_contexto);
+            var retorno = _repositorio.ObterPorInicioDeNome("F");
 
-            var retorno = repositorioDePessoa.ObterPorInicioDeNome("F");            
-            
             return View(retorno);
         }
 
