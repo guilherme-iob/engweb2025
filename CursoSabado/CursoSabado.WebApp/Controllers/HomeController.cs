@@ -24,7 +24,7 @@ namespace CursoSabado.WebApp.Controllers
 
         public IActionResult Index()
         {
-            var retorno = _repositorio.OterTodos();
+            var retorno = _repositorio.ObterTodos();
 
             return View(retorno);
         }

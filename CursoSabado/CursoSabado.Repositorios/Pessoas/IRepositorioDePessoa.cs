@@ -4,7 +4,7 @@ namespace CursoSabado.Repositorios.Pessoas
 {
     public interface IRepositorioDePessoa
     {
-        IList<Pessoa> OterTodos();
+        IList<Pessoa> ObterTodos();
 
         Pessoa? Obter(int id);
         

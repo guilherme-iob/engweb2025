@@ -27,7 +27,7 @@ namespace CursoSabado.Repositorios.FakeNews.Pessoas
             return CriarListas().Where(x => x.NomeCompleto.StartsWith(conteudo)).ToList();
         }
 
-        public IList<Pessoa> OterTodos()
+        public IList<Pessoa> ObterTodos()
         {
             return CriarListas();
         }

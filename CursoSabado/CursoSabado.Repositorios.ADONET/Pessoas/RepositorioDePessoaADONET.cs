@@ -20,7 +20,7 @@ namespace CursoSabado.Repositorios.ADONET.Pessoas
             throw new NotImplementedException();
         }
 
-        public IList<Pessoa> OterTodos()
+        public IList<Pessoa> ObterTodos()
         {
             throw new NotImplementedException();
         }

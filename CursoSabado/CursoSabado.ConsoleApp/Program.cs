@@ -23,7 +23,7 @@ internal class Program
 
             IRepositorioDePessoa repositorioDePessoa = provider.GetRequiredService<IRepositorioDePessoa>();
 
-            var pessoas = repositorioDePessoa.OterTodos();
+            var pessoas = repositorioDePessoa.ObterTodos();
 
             foreach (var p in pessoas)
             {

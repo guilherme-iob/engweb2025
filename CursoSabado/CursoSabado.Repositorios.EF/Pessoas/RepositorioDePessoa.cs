@@ -17,7 +17,7 @@ namespace CursoSabado.Repositorios.EF.Pessoas
             _contexto = contexto;
         }
         
-        public IList<Pessoa> OterTodos() 
+        public IList<Pessoa> ObterTodos() 
         {
             return _contexto.Pessoas.ToList();
         }
