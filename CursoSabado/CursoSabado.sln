@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.Repositorios", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.Repositorios.FakeNews", "CursoSabado.Repositorios.FakeNews\CursoSabado.Repositorios.FakeNews.csproj", "{609D5F75-2528-460F-A877-3FBBB4F6F134}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.Repositorios.ADONET", "CursoSabado.Repositorios.ADONET\CursoSabado.Repositorios.ADONET.csproj", "{9C4796A7-6429-4D87-A497-4242DCF879D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{609D5F75-2528-460F-A877-3FBBB4F6F134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{609D5F75-2528-460F-A877-3FBBB4F6F134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{609D5F75-2528-460F-A877-3FBBB4F6F134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C4796A7-6429-4D87-A497-4242DCF879D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C4796A7-6429-4D87-A497-4242DCF879D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C4796A7-6429-4D87-A497-4242DCF879D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C4796A7-6429-4D87-A497-4242DCF879D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{3E66E17A-9D1A-4763-9E56-6B6C3F498521} = {69041A30-518B-46BC-ABC5-2BE84FF493BA}
 		{5780212F-EEA8-4003-A7BE-3D2AFCCAF229} = {78EB3F5E-24A7-4961-9C7E-9026E6FCACDD}
 		{609D5F75-2528-460F-A877-3FBBB4F6F134} = {78EB3F5E-24A7-4961-9C7E-9026E6FCACDD}
+		{9C4796A7-6429-4D87-A497-4242DCF879D2} = {78EB3F5E-24A7-4961-9C7E-9026E6FCACDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB7B9661-0A6B-4BB6-91F0-686E7866793E}
