@@ -30,3 +30,4 @@
   * Microsoft.EntityFrameworkCore
   * Microsoft.EntityFrameworkCore.Proxies
   * Microsoft.EntityFrameworkCore.Relational
+* Microsoft.Extensions.DependencyInjection
