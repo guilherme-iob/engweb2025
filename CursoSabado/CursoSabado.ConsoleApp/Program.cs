@@ -12,9 +12,9 @@ internal class Program
 		try
 		{
             var configuration = new ConfigurationBuilder()
-           .SetBasePath(Directory.GetCurrentDirectory())
-           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-           .Build();
+               .SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+               .Build();
 
             var services = new ServiceCollection();
             services.Registrar(configuration);

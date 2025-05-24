@@ -1,15 +1,19 @@
 ﻿using CursoSabado.Dominio.Pessoas;
 using CursoSabado.Repositorios.Pessoas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace CursoSabado.Repositorios.ADONET.Pessoas
 {
     public class RepositorioDePessoaADONET : IRepositorioDePessoa
     {
+        private readonly String? _stringDeConexao;
+
+        public RepositorioDePessoaADONET(IConfiguration config)
+        {
+            _stringDeConexao = config.GetConnectionString("DefaultConnection");
+        }
+
         public Pessoa? Obter(int id)
         {
             throw new NotImplementedException();
@@ -22,7 +26,25 @@ namespace CursoSabado.Repositorios.ADONET.Pessoas
 
         public IList<Pessoa> ObterTodos()
         {
-            throw new NotImplementedException();
+            var listaDePessoas = new List<Pessoa>();
+            
+            using var conn = new SqlConnection(_stringDeConexao);
+            conn.Open();
+
+            using var comando = new SqlCommand("select ID, NOME from pessoas", conn);
+            using var reader = comando.ExecuteReader();
+
+            while (reader.Read()) 
+            {
+                var pessoa = new Pessoa();
+
+                pessoa.Id = (int)reader["ID"];
+                pessoa.NomeCompleto = reader["NOME"].ToString();
+
+                listaDePessoas.Add(pessoa);
+            }
+
+            return listaDePessoas;
         }
     }
 }

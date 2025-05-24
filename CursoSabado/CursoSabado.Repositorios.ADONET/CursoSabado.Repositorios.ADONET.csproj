@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CursoSabado.Dominio\CursoSabado.Dominio.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios\CursoSabado.Repositorios.csproj" />
   </ItemGroup>
