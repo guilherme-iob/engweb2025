@@ -14,6 +14,21 @@ namespace CursoSabado.Repositorios.ADONET.Pessoas
             _stringDeConexao = config.GetConnectionString("DefaultConnection");
         }
 
+
+        public Pessoa Adicionar(Pessoa pessoa) 
+        {
+            using var conn = new SqlConnection(_stringDeConexao);
+            conn.Open();
+            using var comando = new SqlCommand("INSERT INTO PESSOAS (NOME) VALUES (@NomeCompleto); SELECT SCOPE_IDENTITY();", conn);
+            comando.Parameters.AddWithValue("@NomeCompleto", pessoa.NomeCompleto);
+
+            var resultado = comando.ExecuteScalar();
+
+            pessoa.Id = Convert.ToInt32(resultado);
+            
+            return pessoa;
+        }
+
         public Pessoa? Obter(int id)
         {
             throw new NotImplementedException();

@@ -5,18 +5,25 @@ namespace CursoSabado.Repositorios.FakeNews.Pessoas
 {
     public class RepositorioDePessoaFakeNews : IRepositorioDePessoa
     {
-        public Pessoa? Obter(int id)
+        private IList<Pessoa> _pessoasFake;
+
+        public RepositorioDePessoaFakeNews()
         {
-            return new Pessoa() { Id = id, NomeCompleto = "Pessoa Fake Criado em Tempo de Execução" };
+            _pessoasFake = Seed();
         }
 
-        private IList<Pessoa> CriarListas() 
+        public Pessoa? Obter(int id)
+        {
+            return _pessoasFake.FirstOrDefault(x => x.Id == id);
+        }
+
+        private IList<Pessoa> Seed() 
         {
             var pessoas = new List<Pessoa>();
 
             for (int i = 1; i <= 10; i++)
             {
-                pessoas.Add(new Pessoa() { Id = i, NomeCompleto = $"Nome Completo da Pessoa {i}" });
+                pessoas.Add(new Pessoa() { Id = i, NomeCompleto = $"Pessoa Fake News {i}" });
             }
 
             return pessoas;
@@ -24,12 +31,21 @@ namespace CursoSabado.Repositorios.FakeNews.Pessoas
 
         public IList<Pessoa> ObterPorInicioDeNome(string conteudo)
         {
-            return CriarListas().Where(x => x.NomeCompleto.StartsWith(conteudo)).ToList();
+            return _pessoasFake.Where(x => x.NomeCompleto.StartsWith(conteudo)).ToList();
         }
 
         public IList<Pessoa> ObterTodos()
         {
-            return CriarListas();
+            return _pessoasFake;
+        }
+
+        public Pessoa Adicionar(Pessoa pessoa)
+        {
+            pessoa.Id = DateTime.Now.Millisecond;
+
+            _pessoasFake.Add(pessoa);
+
+            return pessoa;
         }
     }
 }

@@ -31,5 +31,10 @@ namespace CursoSabado.Repositorios.EF.Pessoas
         {
             return _contexto.Pessoas.Where(x => x.NomeCompleto.StartsWith(conteudo)).ToList();
         }
+
+        public Pessoa Adicionar(Pessoa pessoa)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

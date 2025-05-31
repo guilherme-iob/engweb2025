@@ -9,5 +9,7 @@ namespace CursoSabado.Repositorios.Pessoas
         Pessoa? Obter(int id);
         
         IList<Pessoa> ObterPorInicioDeNome(String conteudo);
+
+        Pessoa Adicionar(Pessoa pessoa);
     }
 }
