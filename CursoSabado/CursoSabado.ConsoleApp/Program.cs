@@ -24,13 +24,13 @@ internal class Program
     {
         Console.WriteLine("Sistema - Versão Console");
 
-		try
-		{
-            var provider = StartupApp();
+        var provider = StartupApp();
 
-            IRepositorioDePessoa repositorioDePessoa = provider.GetRequiredService<IRepositorioDePessoa>();
+        IRepositorioDePessoa repositorioDePessoa = provider.GetRequiredService<IRepositorioDePessoa>();
 
-            do
+        do
+        {
+            try
             {
                 Console.WriteLine("\n-----------------------------------------");
                 Console.WriteLine("1 - Cadastrar Pessoa");
@@ -41,10 +41,17 @@ internal class Program
 
                 int opcao = int.Parse(Console.ReadLine());
 
-                if (opcao == 1) 
+                if (opcao == 1)
                 {
                     Console.Write("Informar o nome completo da pessoa: ");
                     String nome = Console.ReadLine();
+
+                    //Validação do nome e sobrenome
+                    //if (nome.Split(' ').Count() <= 1) 
+                    //{
+                    //    Console.WriteLine("É obrigatório informar o sobrenome");
+                    //    continue;
+                    //}
 
                     var novaPessoa = new Pessoa();
                     novaPessoa.NomeCompleto = nome;
@@ -60,18 +67,19 @@ internal class Program
                         Console.WriteLine(p.Id + " - " + p.NomeCompleto);
                     }
                 }
-                else if (opcao == 99) 
+                else if (opcao == 99)
                 {
                     break;
                 }
+
             }
-            while (true);
+            catch (Exception ex)
+            {
+                Console.WriteLine("================================================================");
+                Console.WriteLine($"Erro: {ex.Message}");
+                Console.WriteLine("================================================================");
+            }
         }
-		catch (Exception ex)
-		{
-            Console.WriteLine("================================================================");
-            Console.WriteLine($"Problema: {ex}");
-            Console.WriteLine("================================================================");
-        }     
+        while (true);
     }
 }

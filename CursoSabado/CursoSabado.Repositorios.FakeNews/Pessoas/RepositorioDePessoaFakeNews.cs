@@ -41,6 +41,11 @@ namespace CursoSabado.Repositorios.FakeNews.Pessoas
 
         public Pessoa Adicionar(Pessoa pessoa)
         {
+            if (pessoa.NomeCompleto.Split(' ').Count() <= 1) 
+            {
+                throw new Exception("O nome deve possuir um sobrenome");
+            }
+
             pessoa.Id = DateTime.Now.Millisecond;
 
             _pessoasFake.Add(pessoa);

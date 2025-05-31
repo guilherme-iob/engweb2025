@@ -26,7 +26,31 @@ namespace CursoSabado.WebApp.Controllers
         {
             var retorno = _repositorio.ObterTodos();
 
-            return View(retorno);
+            return View(retorno);        
+        }
+
+        public IActionResult AddPessoa() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddPessoa([FromBody] Pessoa pessoa)
+        {
+            try
+            {
+                //if (pessoa.NomeCompleto.Split(' ').Count() <= 1)
+                //{
+                //    return Json(new Resultado() { Sucesso = false, Mensagem = "A pessoa deve ter um sobrenome." });
+                //}
+
+                var novaPessoa = _repositorio.Adicionar(pessoa);
+                return Json(new Resultado() { Sucesso = true, Dados = novaPessoa });
+            }
+            catch (Exception ex)
+            {
+                return Json(new Resultado() { Sucesso = false, Mensagem = ex.Message });
+            }
         }
 
         public IActionResult Privacy()
