@@ -1,30 +1,22 @@
+using CursoSabado.Dominio.Pessoas;
+using CursoSabado.Servicos.Pessoas;
 using CursoSabado.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using CursoSabado.Dominio.Pessoas;
-using CursoSabado.Repositorios.EF;
-using CursoSabado.Repositorios.EF.Pessoas;
-using CursoSabado.Repositorios.Pessoas;
 
 namespace CursoSabado.WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly CursoSabadoContexto _contexto;
-        private readonly IRepositorioDePessoa _repositorio;
+        private readonly IServicoDePessoa _servico;
 
-        public HomeController(
-            //CursoSabadoContexto contexto //Usando anteriormente quando não havia o padrao de repositorio implementado. Evitar
-            IRepositorioDePessoa repositorioPessoa
-            )
+        public HomeController(IServicoDePessoa servico)
         {
-            //_contexto = contexto;
-            _repositorio = repositorioPessoa;
+            _servico = servico;
         }
 
         public IActionResult Index()
         {
-            var retorno = _repositorio.ObterTodos();
+            var retorno = _servico.ObterTodos();
 
             return View(retorno);        
         }
@@ -39,29 +31,13 @@ namespace CursoSabado.WebApp.Controllers
         {
             try
             {
-                //if (pessoa.NomeCompleto.Split(' ').Count() <= 1)
-                //{
-                //    return Json(new Resultado() { Sucesso = false, Mensagem = "A pessoa deve ter um sobrenome." });
-                //}
-
-                var novaPessoa = _repositorio.Adicionar(pessoa);
+                var novaPessoa = _servico.Salvar(pessoa);
                 return Json(new Resultado() { Sucesso = true, Dados = novaPessoa });
             }
             catch (Exception ex)
             {
                 return Json(new Resultado() { Sucesso = false, Mensagem = ex.Message });
             }
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

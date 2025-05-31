@@ -16,6 +16,7 @@
     <ProjectReference Include="..\CursoSabado.Repositorios.EF\CursoSabado.Repositorios.EF.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.FakeNews\CursoSabado.Repositorios.FakeNews.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios\CursoSabado.Repositorios.csproj" />
+    <ProjectReference Include="..\CursoSabado.Servicos\CursoSabado.Servicos.csproj" />
   </ItemGroup>
 
 </Project>

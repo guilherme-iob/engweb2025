@@ -2,6 +2,7 @@
 using CursoSabado.Infra.IOC;
 using CursoSabado.Repositorios.ADONET.Pessoas;
 using CursoSabado.Repositorios.Pessoas;
+using CursoSabado.Servicos.Pessoas;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,7 +27,7 @@ internal class Program
 
         var provider = StartupApp();
 
-        IRepositorioDePessoa repositorioDePessoa = provider.GetRequiredService<IRepositorioDePessoa>();
+        IServicoDePessoa servicoDePessoa = provider.GetRequiredService<IServicoDePessoa>();
 
         do
         {
@@ -46,22 +47,15 @@ internal class Program
                     Console.Write("Informar o nome completo da pessoa: ");
                     String nome = Console.ReadLine();
 
-                    //Validação do nome e sobrenome
-                    //if (nome.Split(' ').Count() <= 1) 
-                    //{
-                    //    Console.WriteLine("É obrigatório informar o sobrenome");
-                    //    continue;
-                    //}
-
                     var novaPessoa = new Pessoa();
                     novaPessoa.NomeCompleto = nome;
 
-                    repositorioDePessoa.Adicionar(novaPessoa);
+                    servicoDePessoa.Salvar(novaPessoa);
                 }
                 else if (opcao == 2)
                 {
                     Console.Clear();
-                    var pessoas = repositorioDePessoa.ObterTodos();
+                    var pessoas = servicoDePessoa.ObterTodos();
                     foreach (var p in pessoas)
                     {
                         Console.WriteLine(p.Id + " - " + p.NomeCompleto);

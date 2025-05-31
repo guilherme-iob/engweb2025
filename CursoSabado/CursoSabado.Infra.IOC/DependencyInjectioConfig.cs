@@ -1,4 +1,5 @@
 ﻿using CursoSabado.Repositorios.EF;
+using CursoSabado.Servicos.Pessoas;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,11 +18,15 @@ namespace CursoSabado.Infra.IOC
                 )
             );
 
+            //REPOSITÓRIOS
             //service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.EF.Pessoas.RepositorioDePessoa>();            
-            service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.ADONET.Pessoas.RepositorioDePessoaADONET>();
+            //service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.ADONET.Pessoas.RepositorioDePessoaADONET>();
+            //Foi usado AddSingleton porque os dados estão em memória na variável do próprio repositório.
+            service.AddSingleton<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
 
-            //AddSingleton porque os dados estão em memória na variável do próprio repositório.
-            //service.AddSingleton<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
+
+            //SERVIÇOS
+            service.AddScoped<IServicoDePessoa, ServicoDePessoa>();
 
             return service;
         }
