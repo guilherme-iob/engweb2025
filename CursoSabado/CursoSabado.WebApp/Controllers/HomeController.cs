@@ -1,4 +1,6 @@
 using CursoSabado.Dominio.Pessoas;
+using CursoSabado.DTOs.Pessoas;
+using CursoSabado.Servicos.Aplicacao.Pessoas;
 using CursoSabado.Servicos.Pessoas;
 using CursoSabado.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,9 +9,9 @@ namespace CursoSabado.WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IServicoDePessoa _servico;
+        private readonly IServicoDeAplicacaoPessoa _servico;
 
-        public HomeController(IServicoDePessoa servico)
+        public HomeController(IServicoDeAplicacaoPessoa servico)
         {
             _servico = servico;
         }
@@ -27,7 +29,7 @@ namespace CursoSabado.WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddPessoa([FromBody] Pessoa pessoa)
+        public IActionResult AddPessoa([FromBody] DTODePessoa pessoa)
         {
             try
             {

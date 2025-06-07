@@ -19,10 +19,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CursoSabado.Dominio\CursoSabado.Dominio.csproj" />
+    <ProjectReference Include="..\CursoSabado.DTOs\CursoSabado.DTOs.csproj" />
     <ProjectReference Include="..\CursoSabado.Infra.IOC\CursoSabado.Infra.IOC.csproj" />
+    <ProjectReference Include="..\CursoSabado.MapeadoresDTOs\CursoSabado.MapeadoresDTOs.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.EF\CursoSabado.Repositorios.EF.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.FakeNews\CursoSabado.Repositorios.FakeNews.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios\CursoSabado.Repositorios.csproj" />
+    <ProjectReference Include="..\CursoSabado.Servicos.Aplicacao\CursoSabado.Servicos.Aplicacao.csproj" />
     <ProjectReference Include="..\CursoSabado.Servicos\CursoSabado.Servicos.csproj" />
   </ItemGroup>
 

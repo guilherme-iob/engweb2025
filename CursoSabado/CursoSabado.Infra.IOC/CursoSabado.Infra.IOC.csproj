@@ -12,10 +12,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CursoSabado.Mapeadores.DTOs.Manual\CursoSabado.Mapeadores.DTOs.Manual.csproj" />
+    <ProjectReference Include="..\CursoSabado.MapeadoresDTOs\CursoSabado.MapeadoresDTOs.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.ADONET\CursoSabado.Repositorios.ADONET.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.EF\CursoSabado.Repositorios.EF.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios.FakeNews\CursoSabado.Repositorios.FakeNews.csproj" />
     <ProjectReference Include="..\CursoSabado.Repositorios\CursoSabado.Repositorios.csproj" />
+    <ProjectReference Include="..\CursoSabado.Servicos.Aplicacao\CursoSabado.Servicos.Aplicacao.csproj" />
     <ProjectReference Include="..\CursoSabado.Servicos\CursoSabado.Servicos.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,7 @@
-﻿using CursoSabado.Repositorios.EF;
+﻿using CursoSabado.Mapeadores.DTOs.Manual.Pessoas;
+using CursoSabado.MapeadoresDTOs.Pessoas;
+using CursoSabado.Repositorios.EF;
+using CursoSabado.Servicos.Aplicacao.Pessoas;
 using CursoSabado.Servicos.Pessoas;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -19,14 +22,20 @@ namespace CursoSabado.Infra.IOC
             );
 
             //REPOSITÓRIOS
-            //service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.EF.Pessoas.RepositorioDePessoa>();            
+            service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.EF.Pessoas.RepositorioDePessoa>();
             //service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.ADONET.Pessoas.RepositorioDePessoaADONET>();
             //Foi usado AddSingleton porque os dados estão em memória na variável do próprio repositório.
-            service.AddSingleton<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
+            //service.AddSingleton<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
 
+
+            //MAPEADORES
+            service.AddScoped<IMapeadorDeDTODePessoa, MapeadorDeDTODePessoa>();
 
             //SERVIÇOS
             service.AddScoped<IServicoDePessoa, ServicoDePessoa>();
+
+            //SERVIÇOS DE APLICAÇÃO
+            service.AddScoped<IServicoDeAplicacaoPessoa, ServicoDeAplicacaoPessoa>();
 
             return service;
         }

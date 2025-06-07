@@ -1,4 +1,4 @@
-﻿@model List<CursoSabado.Dominio.Pessoas.Pessoa>
+﻿@model List<CursoSabado.DTOs.Pessoas.DTODePessoa>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -13,7 +13,7 @@
     for (int i = 0; i < Model.Count; i++)
     {
         <div>
-            <span>Id: @Model[i].Id e Nome: @Model[i].NomeCompleto </span>
+            <span>Id: @Model[i].Id e Nome: @Model[i].NomeCompleto | @Model[i].DescricaoIdade </span>
         </div>
     }
 }
