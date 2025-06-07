@@ -1,7 +1,9 @@
 ﻿using CursoSabado.Dominio.Pessoas;
+using CursoSabado.Dominio.Produtos;
 using CursoSabado.Infra.IOC;
 using CursoSabado.Repositorios.ADONET.Pessoas;
 using CursoSabado.Repositorios.Pessoas;
+using CursoSabado.Repositorios.Produtos;
 using CursoSabado.Servicos.Pessoas;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +30,7 @@ internal class Program
         var provider = StartupApp();
 
         IServicoDePessoa servicoDePessoa = provider.GetRequiredService<IServicoDePessoa>();
+        IRepositorioDeProduto repositorioDeProduto = provider.GetRequiredService<IRepositorioDeProduto>();
 
         do
         {
@@ -36,6 +39,8 @@ internal class Program
                 Console.WriteLine("\n-----------------------------------------");
                 Console.WriteLine("1 - Cadastrar Pessoa");
                 Console.WriteLine("2 - Listas Pessoas");
+                Console.WriteLine("3 - Cadastrar Produto");
+                Console.WriteLine("4 - Listas Produtos");
                 Console.WriteLine("99 - Sair");
                 Console.WriteLine("-----------------------------------------");
                 Console.Write("Informe a opção: ");
@@ -59,6 +64,25 @@ internal class Program
                     foreach (var p in pessoas)
                     {
                         Console.WriteLine(p.Id + " - " + p.NomeCompleto);
+                    }
+                }
+                else if (opcao == 3)
+                {
+                    Console.Write("Informar o nome do produto: ");
+                    String nome = Console.ReadLine();
+
+                    var produto = new Produto();
+                    produto.Descricao = nome;
+
+                    repositorioDeProduto.Adicionar(produto);
+                }
+                else if (opcao == 4)
+                {
+                    Console.Clear();
+                    var produtos = repositorioDeProduto.ObterTodos();
+                    foreach (var p in produtos)
+                    {
+                        Console.WriteLine(p.Id + " - " + p.Descricao);
                     }
                 }
                 else if (opcao == 99)

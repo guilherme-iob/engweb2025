@@ -1,6 +1,10 @@
 ﻿using CursoSabado.Mapeadores.DTOs.Manual.Pessoas;
 using CursoSabado.MapeadoresDTOs.Pessoas;
 using CursoSabado.Repositorios.EF;
+using CursoSabado.Repositorios.EF.Pessoas;
+using CursoSabado.Repositorios.EF.Produtos;
+using CursoSabado.Repositorios.Pessoas;
+using CursoSabado.Repositorios.Produtos;
 using CursoSabado.Servicos.Aplicacao.Pessoas;
 using CursoSabado.Servicos.Pessoas;
 using Microsoft.EntityFrameworkCore;
@@ -21,21 +25,38 @@ namespace CursoSabado.Infra.IOC
                 )
             );
 
-            //REPOSITÓRIOS
-            service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.EF.Pessoas.RepositorioDePessoa>();
+            #region REPOSITÓRIOS
+
+            #region Exemplo com Outras Tecnologias e formas para o acesso ao banco de dados
+
             //service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.ADONET.Pessoas.RepositorioDePessoaADONET>();
             //Foi usado AddSingleton porque os dados estão em memória na variável do próprio repositório.
             //service.AddSingleton<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
 
+            #endregion
 
-            //MAPEADORES
+            service.AddScoped<IRepositorioDePessoa, RepositorioDePessoa>();            
+            service.AddScoped<IRepositorioDeProduto, RepositorioDeProduto>();
+
+            #endregion
+
+            #region MAPEADORES
+
             service.AddScoped<IMapeadorDeDTODePessoa, MapeadorDeDTODePessoa>();
 
-            //SERVIÇOS
+            #endregion
+
+            #region SERVIÇOS
+
             service.AddScoped<IServicoDePessoa, ServicoDePessoa>();
 
-            //SERVIÇOS DE APLICAÇÃO
+            #endregion
+
+            #region SERVIÇOS DE APLICAÇÃO
+
             service.AddScoped<IServicoDeAplicacaoPessoa, ServicoDeAplicacaoPessoa>();
+
+            #endregion
 
             return service;
         }
