@@ -1,10 +1,6 @@
 ﻿using CursoSabado.Dominio.Pessoas;
 using CursoSabado.Repositorios.Pessoas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CursoSabado.Repositorios.EF.Pessoas
 {
@@ -12,29 +8,34 @@ namespace CursoSabado.Repositorios.EF.Pessoas
     {
         private readonly CursoSabadoContexto _contexto;
 
+        private DbSet<Pessoa> pessoas;
+
         public RepositorioDePessoa(CursoSabadoContexto contexto)
         {
             _contexto = contexto;
+            pessoas = _contexto.Set<Pessoa>();
         }
         
         public IList<Pessoa> ObterTodos() 
         {
-            return _contexto.Pessoas.ToList();
+            return pessoas.ToList();
         }
 
         public Pessoa? Obter(int id) 
         {
-            return _contexto.Pessoas.Where(x => x.Id == id).FirstOrDefault();
+            return pessoas.Where(x => x.Id == id).FirstOrDefault();
         }
 
         public IList<Pessoa> ObterPorInicioDeNome(String conteudo) 
         {
-            return _contexto.Pessoas.Where(x => x.NomeCompleto.StartsWith(conteudo)).ToList();
+            return pessoas.Where(x => x.NomeCompleto.StartsWith(conteudo)).ToList();
         }
 
         public Pessoa Adicionar(Pessoa pessoa)
         {
-            throw new NotImplementedException();
+            _contexto.Add(pessoa);            
+            _contexto.SaveChanges();
+            return pessoa;
         }
     }
 }

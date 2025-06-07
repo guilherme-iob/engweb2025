@@ -1,4 +1,4 @@
-﻿using CursoSabado.Dominio.Pessoas;
+﻿using CursoSabado.Repositorios.EF.Pessoas;
 using Microsoft.EntityFrameworkCore;
 
 namespace CursoSabado.Repositorios.EF
@@ -10,6 +10,9 @@ namespace CursoSabado.Repositorios.EF
 
         }
 
-        public DbSet<Pessoa> Pessoas { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new MapeadorDePessoa());
+        }
     }
 }

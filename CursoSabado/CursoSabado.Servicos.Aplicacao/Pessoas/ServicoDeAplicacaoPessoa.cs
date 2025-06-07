@@ -32,7 +32,9 @@ namespace CursoSabado.Servicos.Aplicacao.Pessoas
 
         public DTODePessoa Salvar(DTODePessoa pessoa) 
         {
-            throw new NotImplementedException();
+            var modelo = _mapeador.ParaEntidade(pessoa);
+            modelo = _servicoPessoa.Salvar(modelo);
+            return _mapeador.ParaDTO(modelo);
         }
     }
 }

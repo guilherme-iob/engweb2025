@@ -29,7 +29,11 @@ namespace CursoSabado.Mapeadores.DTOs.Manual.Pessoas
 
         public Pessoa ParaEntidade(DTODePessoa dto)
         {
-            throw new NotImplementedException();
+            var modelo = new Pessoa();
+            modelo.Id = dto.Id;
+            modelo.NomeCompleto = dto.NomeCompleto;
+            modelo.DataDeNascimento = dto.DataNascimento;
+            return modelo;
         }
     }
 }
