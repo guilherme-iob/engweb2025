@@ -29,7 +29,7 @@ namespace CursoSabado.Servicos.Pessoas
 
         public Pessoa Salvar(Pessoa pessoa) 
         {
-            if (pessoa.NomeCompleto.Split(' ').Count() <= 1)
+            if (pessoa.Nome.Split(' ').Count() <= 1)
             {
                 throw new Exception("O nome deve possuir obrigatoriamente um sobrenome");
             }

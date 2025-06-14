@@ -16,7 +16,7 @@ namespace CursoSabado.Repositorios.EF.Pessoas
                 .HasColumnName("ID")
                 .ValueGeneratedOnAdd();
 
-            builder.Property(x => x.NomeCompleto).HasColumnName("NOME");
+            builder.Property(x => x.Nome).HasColumnName("NOME");
 
             builder.Property(x => x.DataDeNascimento).HasColumnName("DATANASCIMENTO");
         }

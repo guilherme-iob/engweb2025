@@ -41,6 +41,7 @@ internal class Program
                 Console.WriteLine("2 - Listas Pessoas");
                 Console.WriteLine("3 - Cadastrar Produto");
                 Console.WriteLine("4 - Listas Produtos");
+                Console.WriteLine("5 - Buscar Pessoas");
                 Console.WriteLine("99 - Sair");
                 Console.WriteLine("-----------------------------------------");
                 Console.Write("Informe a opção: ");
@@ -53,7 +54,7 @@ internal class Program
                     String nome = Console.ReadLine();
 
                     var novaPessoa = new Pessoa();
-                    novaPessoa.NomeCompleto = nome;
+                    novaPessoa.Nome = nome;
 
                     servicoDePessoa.Salvar(novaPessoa);
                 }
@@ -63,7 +64,7 @@ internal class Program
                     var pessoas = servicoDePessoa.ObterTodos();
                     foreach (var p in pessoas)
                     {
-                        Console.WriteLine(p.Id + " - " + p.NomeCompleto);
+                        Console.WriteLine(p.Id + " - " + p.Nome);
                     }
                 }
                 else if (opcao == 3)
@@ -72,7 +73,7 @@ internal class Program
                     String nome = Console.ReadLine();
 
                     var produto = new Produto();
-                    produto.Descricao = nome;
+                    produto.Nome = nome;
 
                     repositorioDeProduto.Adicionar(produto);
                 }
@@ -82,7 +83,19 @@ internal class Program
                     var produtos = repositorioDeProduto.ObterTodos();
                     foreach (var p in produtos)
                     {
-                        Console.WriteLine(p.Id + " - " + p.Descricao);
+                        Console.WriteLine(p.Id + " - " + p.Nome);
+                    }
+                }
+                else if (opcao == 5)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Informe o valor de busca: ");
+                    String busca = Console.ReadLine();
+
+                    var pessoas = servicoDePessoa.ObterPorInicioDeNome(busca);
+                    foreach (var p in pessoas)
+                    {
+                        Console.WriteLine(p.ToString());
                     }
                 }
                 else if (opcao == 99)

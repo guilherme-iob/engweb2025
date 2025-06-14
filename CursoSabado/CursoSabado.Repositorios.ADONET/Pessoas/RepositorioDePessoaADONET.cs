@@ -19,8 +19,8 @@ namespace CursoSabado.Repositorios.ADONET.Pessoas
         {
             using var conn = new SqlConnection(_stringDeConexao);
             conn.Open();
-            using var comando = new SqlCommand("INSERT INTO PESSOAS (NOME) VALUES (@NomeCompleto); SELECT SCOPE_IDENTITY();", conn);
-            comando.Parameters.AddWithValue("@NomeCompleto", pessoa.NomeCompleto);
+            using var comando = new SqlCommand("INSERT INTO PESSOAS (NOME) VALUES (@Nome); SELECT SCOPE_IDENTITY();", conn);
+            comando.Parameters.AddWithValue("@Nome", pessoa.Nome);
 
             var resultado = comando.ExecuteScalar();
 
@@ -54,7 +54,7 @@ namespace CursoSabado.Repositorios.ADONET.Pessoas
                 var pessoa = new Pessoa();
 
                 pessoa.Id = (int)reader["ID"];
-                pessoa.NomeCompleto = reader["NOME"].ToString();
+                pessoa.Nome = reader["NOME"].ToString();
 
                 listaDePessoas.Add(pessoa);
             }

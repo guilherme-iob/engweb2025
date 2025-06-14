@@ -23,7 +23,7 @@ namespace CursoSabado.Repositorios.FakeNews.Pessoas
 
             for (int i = 1; i <= 10; i++)
             {
-                pessoas.Add(new Pessoa() { Id = i, NomeCompleto = $"Pessoa Fake News {i}" });
+                pessoas.Add(new Pessoa() { Id = i, Nome = $"Pessoa Fake News {i}" });
             }
 
             return pessoas;
@@ -31,7 +31,7 @@ namespace CursoSabado.Repositorios.FakeNews.Pessoas
 
         public IList<Pessoa> ObterPorInicioDeNome(string conteudo)
         {
-            return _pessoasFake.Where(x => x.NomeCompleto.StartsWith(conteudo)).ToList();
+            return _pessoasFake.Where(x => x.Nome.StartsWith(conteudo)).ToList();
         }
 
         public IList<Pessoa> ObterTodos()

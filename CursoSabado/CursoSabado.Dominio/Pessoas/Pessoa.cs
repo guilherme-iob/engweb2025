@@ -2,15 +2,13 @@
 
 namespace CursoSabado.Dominio.Pessoas
 {
-    public class Pessoa : ObjetoComId
+    public class Pessoa : ObjetoComNome
     {
-        public String NomeCompleto { get; set; }
-
         public DateTime? DataDeNascimento { get; set; }
 
         public override string ToString()
         {
-            return $"ID: {Id}, Nome: {NomeCompleto}, Data de Nascimento: {DataDeNascimento.GetValueOrDefault().ToString("dd/MM/yyyy")}";
+            return $"ID: {Id}, Nome: {Nome}, Data de Nascimento: {DataDeNascimento.GetValueOrDefault().ToString("dd/MM/yyyy")}";
         }
     }
 }
