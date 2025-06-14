@@ -1,9 +1,9 @@
-﻿namespace CursoSabado.Dominio.Pessoas
-{
-    public class Pessoa
-    {
-        public int Id { get; set; }
+﻿using CursoSabado.Dominio.Framework;
 
+namespace CursoSabado.Dominio.Pessoas
+{
+    public class Pessoa : ObjetoComId
+    {
         public String NomeCompleto { get; set; }
 
         public DateTime? DataDeNascimento { get; set; }

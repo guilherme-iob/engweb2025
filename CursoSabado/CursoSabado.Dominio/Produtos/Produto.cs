@@ -1,10 +1,10 @@
 ﻿
+using CursoSabado.Dominio.Framework;
+
 namespace CursoSabado.Dominio.Produtos
 {
-    public class Produto
+    public class Produto : ObjetoComId
     {
-        public int Id { get; set; }
-
         public String Descricao { get; set; }
     }
 }
