@@ -1,15 +1,10 @@
 ﻿using CursoSabado.Dominio.Pessoas;
+using CursoSabado.Repositorios.Framework;
 
 namespace CursoSabado.Repositorios.Pessoas
 {
-    public interface IRepositorioDePessoa
+    public interface IRepositorioDePessoa : IRepositorioBasico<Pessoa>
     {
-        IList<Pessoa> ObterTodos();
-
-        Pessoa? Obter(int id);
-        
         IList<Pessoa> ObterPorInicioDeNome(String conteudo);
-
-        Pessoa Adicionar(Pessoa pessoa);
     }
 }

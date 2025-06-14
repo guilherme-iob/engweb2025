@@ -1,15 +1,10 @@
 ﻿using CursoSabado.Dominio.Produtos;
+using CursoSabado.Repositorios.Framework;
 
 namespace CursoSabado.Repositorios.Produtos
 {
-    public interface IRepositorioDeProduto
+    public interface IRepositorioDeProduto : IRepositorioBasico<Produto>
     {
-        IList<Produto> ObterTodos();
-
-        Produto? Obter(int id);
-
         IList<Produto> ObterPorInicioDeNome(String conteudo);
-
-        Produto Adicionar(Produto pessoa);
     }
 }

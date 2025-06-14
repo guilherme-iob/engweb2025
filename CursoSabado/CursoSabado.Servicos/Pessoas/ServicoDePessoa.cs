@@ -1,47 +1,28 @@
 ﻿using CursoSabado.Dominio.Pessoas;
 using CursoSabado.Repositorios.Pessoas;
+using CursoSabado.Servicos.Framework;
 
 namespace CursoSabado.Servicos.Pessoas
 {
-    public class ServicoDePessoa : IServicoDePessoa
+    public class ServicoDePessoa : ServicoBasico<IRepositorioDePessoa, Pessoa>, IServicoDePessoa
     {
-        private readonly IRepositorioDePessoa _repositorioDePessoa;
-
-        public ServicoDePessoa(IRepositorioDePessoa repositorioPessoa)
+        public ServicoDePessoa(IRepositorioDePessoa repositorioPessoa) : base(repositorioPessoa)
         {
-            _repositorioDePessoa = repositorioPessoa;
-        }
-
-        public IList<Pessoa> ObterTodos() 
-        {
-            return _repositorioDePessoa.ObterTodos();
-        }
-
-        public Pessoa? Obter(int id) 
-        {
-            return _repositorioDePessoa.Obter(id);
         }
 
         public IList<Pessoa> ObterPorInicioDeNome(String conteudo) 
         {
-            return _repositorioDePessoa.ObterPorInicioDeNome(conteudo);
+            return _repositorio.ObterPorInicioDeNome(conteudo);
         }
 
-        public Pessoa Salvar(Pessoa pessoa) 
+        public override Pessoa Salvar(Pessoa pessoa) 
         {
             if (pessoa.Nome.Split(' ').Count() <= 1)
             {
                 throw new Exception("O nome deve possuir obrigatoriamente um sobrenome");
             }
 
-            if (pessoa.Id > 0)
-            {
-                throw new NotImplementedException("");
-            }
-            else 
-            {
-                return _repositorioDePessoa.Adicionar(pessoa);
-            }
+            return base.Salvar(pessoa);
         }
     }
 }

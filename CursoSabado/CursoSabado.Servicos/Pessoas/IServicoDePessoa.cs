@@ -1,15 +1,10 @@
 ﻿using CursoSabado.Dominio.Pessoas;
+using CursoSabado.Servicos.Framework;
 
 namespace CursoSabado.Servicos.Pessoas
 {
-    public interface IServicoDePessoa
+    public interface IServicoDePessoa : IServicoBasicoComNome<Pessoa>
     {
-        IList<Pessoa> ObterTodos();
-        
-        Pessoa? Obter(int id);
-        
-        IList<Pessoa> ObterPorInicioDeNome(String conteudo);
-        
-        Pessoa Salvar(Pessoa pessoa);
+    
     }
 }
