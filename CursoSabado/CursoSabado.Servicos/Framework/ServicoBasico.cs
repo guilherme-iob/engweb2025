@@ -33,7 +33,7 @@ namespace CursoSabado.Servicos.Framework
         {
             if (pessoa.Id > 0)
             {
-                throw new NotImplementedException("");
+                throw new NotImplementedException("Falta a implementação do salvar.");
             }
             else
             {

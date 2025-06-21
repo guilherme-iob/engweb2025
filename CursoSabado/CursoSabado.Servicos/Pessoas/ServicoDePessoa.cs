@@ -1,4 +1,5 @@
-﻿using CursoSabado.Dominio.Pessoas;
+﻿using CursoSabado.Dominio.Erros;
+using CursoSabado.Dominio.Pessoas;
 using CursoSabado.Repositorios.Pessoas;
 using CursoSabado.Servicos.Framework;
 
@@ -19,7 +20,7 @@ namespace CursoSabado.Servicos.Pessoas
         {
             if (pessoa.Nome.Split(' ').Count() <= 1)
             {
-                throw new Exception("O nome deve possuir obrigatoriamente um sobrenome");
+                throw new ErroDeValidacao("O nome deve possuir obrigatoriamente um sobrenome");
             }
 
             return base.Salvar(pessoa);
