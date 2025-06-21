@@ -35,7 +35,9 @@
 
 
 # Migrações de Banco de Dados
-* Conexão com o banco de dados: Arquivo ContextoBancoDados.cs
+* Criar um pacote especifico para a migração de banco de dados
+* Conexão com o banco de dados: Arquivo ContextoMigracoes.cs [criado manualmentel ]
+* Adicionar o pacote Microsoft.EntityFrameworkCore.Design no projeto de migrações de banco de dados
 * Tabela de controle das migrações de banco de dados executadas: __EFMigrationsHistory
 
 ## Via dotnet CLI ou Terminal do VSCode
