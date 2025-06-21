@@ -47,6 +47,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{0770A0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.Testes", "CursoSabado.Testes\CursoSabado.Testes.csproj", "{72B08E76-5980-4F46-B680-05BAAC8CFDF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoSabado.MigracoesBancoDeDados", "CursoSabado.MigracoesBancoDeDados\CursoSabado.MigracoesBancoDeDados.csproj", "{77DC4EEF-E092-4A21-A817-0BCDE9879F07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{72B08E76-5980-4F46-B680-05BAAC8CFDF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72B08E76-5980-4F46-B680-05BAAC8CFDF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72B08E76-5980-4F46-B680-05BAAC8CFDF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DC4EEF-E092-4A21-A817-0BCDE9879F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DC4EEF-E092-4A21-A817-0BCDE9879F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DC4EEF-E092-4A21-A817-0BCDE9879F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DC4EEF-E092-4A21-A817-0BCDE9879F07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,6 +139,7 @@ Global
 		{39AAE208-B682-4067-90E7-32B7F8CFA58C} = {0824D129-730B-4B29-A7C1-487C10D8ECAB}
 		{1852D8A6-265C-4565-AB51-FDC5D778CC3D} = {69041A30-518B-46BC-ABC5-2BE84FF493BA}
 		{72B08E76-5980-4F46-B680-05BAAC8CFDF9} = {0770A0DF-8D3A-4572-80A5-AE5070EC486C}
+		{77DC4EEF-E092-4A21-A817-0BCDE9879F07} = {78EB3F5E-24A7-4961-9C7E-9026E6FCACDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB7B9661-0A6B-4BB6-91F0-686E7866793E}
