@@ -1,9 +1,9 @@
-﻿namespace CursoSabado.DTOs.Produtos
-{
-    public class DTODeProduto
-    {
-        public int Id { get; set; }
+﻿using CursoSabado.Dominio.Framework;
 
-        public String Nome { get; set; }
+namespace CursoSabado.DTOs.Produtos
+{
+    public class DTODeProduto : ObjetoComNome
+    {
+       
     }
 }

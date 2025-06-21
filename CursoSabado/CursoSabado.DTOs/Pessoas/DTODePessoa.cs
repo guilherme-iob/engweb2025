@@ -1,12 +1,9 @@
-﻿
+﻿using CursoSabado.Dominio.Framework;
+
 namespace CursoSabado.DTOs.Pessoas
 {
-    public class DTODePessoa
+    public class DTODePessoa : ObjetoComNome
     {
-        public int Id { get; set; }
-
-        public String NomeCompleto { get; set; }
-
         public DateTime? DataNascimento { get; set; }
 
         public String DescricaoIdade { get; set; }

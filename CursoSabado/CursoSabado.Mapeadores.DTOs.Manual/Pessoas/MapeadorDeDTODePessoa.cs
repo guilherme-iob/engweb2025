@@ -11,7 +11,7 @@ namespace CursoSabado.Mapeadores.DTOs.Manual.Pessoas
             var dto = new DTODePessoa();
 
             dto.Id = modelo.Id;
-            dto.NomeCompleto = modelo.Nome;            
+            dto.Nome = modelo.Nome;            
             dto.DataNascimento = modelo.DataDeNascimento;
 
             if (dto.DataNascimento.HasValue) 
@@ -31,7 +31,7 @@ namespace CursoSabado.Mapeadores.DTOs.Manual.Pessoas
         {
             var modelo = new Pessoa();
             modelo.Id = dto.Id;
-            modelo.Nome = dto.NomeCompleto;
+            modelo.Nome = dto.Nome;
             modelo.DataDeNascimento = dto.DataNascimento;
             return modelo;
         }

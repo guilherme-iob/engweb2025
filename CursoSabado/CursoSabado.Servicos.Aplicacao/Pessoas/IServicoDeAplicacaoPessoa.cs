@@ -3,7 +3,7 @@ using CursoSabado.Servicos.Framework;
 
 namespace CursoSabado.Servicos.Aplicacao.Pessoas
 {
-    public interface IServicoDeAplicacaoPessoa : IServicoBasicoComNome<DTODePessoa>
+    public interface IServicoDeAplicacaoPessoa : IServicoDeAplicacaoBasicoComNome<DTODePessoa>
     {
 
     }
