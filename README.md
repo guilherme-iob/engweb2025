@@ -32,3 +32,22 @@
   * Microsoft.EntityFrameworkCore.Relational
 * Microsoft.Extensions.DependencyInjection
 * Microsoft.Data.SqlClient [ADO.NET]
+
+
+# Migrações de Banco de Dados
+* Criar um pacote especifico para a migração de banco de dados
+* Conexão com o banco de dados: Arquivo ContextoMigracoes.cs [criado manualmentel ]
+* Adicionar o pacote Microsoft.EntityFrameworkCore.Design no projeto de migrações de banco de dados
+* Tabela de controle das migrações de banco de dados executadas: __EFMigrationsHistory
+
+## Via dotnet CLI ou Terminal do VSCode
+* **dotnet tool install --global dotnet-ef** [ Habilitar o cli via dotnet ef - Executar apenas uma vez ]
+* **dotnet ef migrations add NomeDaMigracao** [ Criar uma migração. Sempre que quiser uma nova alteração no banco de dados ]
+* **dotnet ef database update** [ Atualizar as migrações de banco de dados. Sempre que quiser efetivar no banco as mudanças ]
+* Observar para estar no diretório do projeto que contém as migrações
+
+## Via Visual Studio (Package Manager Console)
+* Executar os comandos no Package Manager Console (View -> Other Windows -> Package Manager Console)
+* **Add-Migration NomeDaMigraca**o [ Criar uma migração. Sempre que quiser uma nova alteração no banco de dados ]
+* **Update-Database** [ Atualizar as migrações de banco de dados. Sempre que quiser efetivar no banco as mudanças ]
+* Observar para marcar o projeto que contem as migrações de banco de dados
