@@ -18,9 +18,14 @@ namespace CursoSabado.WebApp.Controllers
 
         public IActionResult Index()
         {
+            return View();        
+        }
+
+        public IActionResult Pessoas()
+        {
             var retorno = _servico.ObterTodos();
 
-            return View(retorno);        
+            return View("Index", retorno);
         }
 
         public IActionResult AddPessoa() 
