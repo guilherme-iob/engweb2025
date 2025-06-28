@@ -31,11 +31,11 @@ namespace CursoSabado.Infra.IOC
 
             //service.AddScoped<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.ADONET.Pessoas.RepositorioDePessoaADONET>();
             //Foi usado AddSingleton porque os dados estão em memória na variável do próprio repositório.
-            //service.AddSingleton<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
+            service.AddSingleton<Repositorios.Pessoas.IRepositorioDePessoa, Repositorios.FakeNews.Pessoas.RepositorioDePessoaFakeNews>();
 
             #endregion
 
-            service.AddScoped<IRepositorioDePessoa, RepositorioDePessoa>();            
+            //service.AddScoped<IRepositorioDePessoa, RepositorioDePessoa>();
             service.AddScoped<IRepositorioDeProduto, RepositorioDeProduto>();
 
             #endregion

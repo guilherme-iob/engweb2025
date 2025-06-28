@@ -30,3 +30,13 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+/CursoSabado/CursoSabado.WebApp/Properties/PublishProfiles/cursosabado - FTP.pubxml
+/CursoSabado/CursoSabado.WebApp/Properties/PublishProfiles/cursosabado - Web Deploy.pubxml
+/CursoSabado/CursoSabado.WebApp/Properties/PublishProfiles/cursosabado - Zip Deploy.pubxml
+/CursoSabado/CursoSabado.WebApp/Properties/ServiceDependencies
+/CursoSabado/CursoSabado.WebApp/Properties/ServiceDependencies/cursosabado - FTP
+/CursoSabado/CursoSabado.WebApp/Properties/ServiceDependencies/cursosabado - FTP/profile.arm.json
+/CursoSabado/CursoSabado.WebApp/Properties/ServiceDependencies/cursosabado - Web Deploy
+/CursoSabado/CursoSabado.WebApp/Properties/ServiceDependencies/cursosabado - Web Deploy/profile.arm.json
+/CursoSabado/CursoSabado.WebApp/Properties/ServiceDependencies/cursosabado - Zip Deploy
+/CursoSabado/CursoSabado.WebApp/Properties/ServiceDependencies/cursosabado - Zip Deploy/profile.arm.json
