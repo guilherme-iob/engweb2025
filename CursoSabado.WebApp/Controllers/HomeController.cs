@@ -38,7 +38,7 @@ namespace CursoSabado.WebApp.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new Resultado() { Sucesso = false, Mensagem = ex.Message });
+                return Json(new Resultado() { Sucesso = false, Mensagem = ex.ToString() });
             }
         }
     }
